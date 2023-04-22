@@ -1,7 +1,8 @@
 class BankAccount:
-    def __init__(self, account_name, initial_balance):
+    def __init__(self, account_name, initial_balance, bank_name):
         self.account_name = account_name
         self.balance = initial_balance
+        self.bank_name = bank_name
         self.transaction_history = []
 
     def deposit(self, amount):
@@ -25,11 +26,15 @@ class BankAccount:
         for transaction in self.transaction_history:
             print(f"{transaction[0]}: {transaction[1]}")
 
-my_account = BankAccount("John Doe", 1000)
+    def display_details(self):
+        print(f"Name : {self.account_name}")
+        print(f"Bank Name : {self.bank_name}")
+
+my_account = BankAccount("John Doe", 1000, "Norfolk")
 
 my_account.deposit(500)
 my_account.withdraw(400)
-
+my_account.display_details()
 my_account.display_balance()
 # Output: 
 # Account Name: John Doe
@@ -41,3 +46,5 @@ my_account.display_transactions()
 # Transaction History:
 # Deposit: 500
 # Withdrawal: 200
+
+my_account.display_details()
