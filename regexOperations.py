@@ -22,4 +22,8 @@ print(d)
 
 print(len(d))
 
+x = -2 ** (-3)
+
+print(abs(x))
+
 

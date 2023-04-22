@@ -1,3 +1,6 @@
+from pyparsing import line
+
+
 def binarySerch():
     lst = [1, 2, 3, 4, 5]
     target = 4
@@ -6,19 +9,31 @@ def binarySerch():
     last = len(lst) - 1
 
     while first <= last:
-        mid = (first + last) // 2
+        mid = (first + last) // 2                # 3+5 = 8//2 = 4
 
-        if lst[mid] == target:
+        if lst[mid] == target:                        
             return f"index position of target: {mid}"
-        elif lst[mid] < target:
-            first = mid + 1
+        elif lst[mid] < target:                  # 3 < 4
+            first = mid + 1                       # 2+1
         else:
             last = mid - 1
 
     return None
 
+print(binarySerch())
 
-# print(binarySerch())
+def linearSearch():
+    lst = [1,2,3,4,5]
+    target = 5
+
+    for i in lst:
+        if i == target:
+            return True, i
+    return -1
+
+print(linearSearch())
+
+
 
 def recursiveBinarySearch(lst, target):
     if len(lst) == 0:
@@ -41,13 +56,6 @@ print(recursiveBinarySearch(lst, target))
 n = 5
 sum1 = (n * (n + 1) * (2 * n + 1)) // 6
 print(sum1)
-
-
-
-
-
-
-
 
 
 
